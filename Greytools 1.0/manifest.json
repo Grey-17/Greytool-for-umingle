@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "Greytools",
+  "description": "Browser utility for media pages.",
+  "version": "1.0",
+  "host_permissions": [
+    "https://umingle.com/*"
+  ],
+  "permissions": [
+    "https://umingle.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://umingle.com/*"
+      ],
+      "js": [
+        "scripts/rtc_shim.js"
+      ],
+      "world": "MAIN",
+      "run_at": "document_start"
+    },
+    {
+      "matches": [
+        "https://umingle.com/*"
+      ],
+      "js": [
+        "scripts/umingle.js"
+      ],
+      "world": "ISOLATED"
+    }
+  ]
+}
