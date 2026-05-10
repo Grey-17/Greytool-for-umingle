@@ -2639,7 +2639,7 @@
                             ">
                                 <i class="fas fa-file-alt"></i> ${t.termsOfService || 'Terms of Service'}
                             </button>
-                            <a href="https://discord.gg/FBsPkXDche" target="_blank" style="
+                            <a href="https://discord.gg/SKWCDjJZkh" target="_blank" style="
                                 flex: 1;
                                 background: #666;
                                 color: white;
