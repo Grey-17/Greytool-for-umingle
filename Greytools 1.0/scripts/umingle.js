@@ -2639,7 +2639,7 @@
                             ">
                                 <i class="fas fa-file-alt"></i> ${t.termsOfService || 'Terms of Service'}
                             </button>
-                            <a href="https://discord.gg/SKWCDjJZkh" target="_blank" style="
+                            <a href="https://discord.gg/FBsPkXDche" target="_blank" style="
                                 flex: 1;
                                 background: #666;
                                 color: white;
@@ -4093,8 +4093,8 @@
 
                     ctx.drawImage(img, 0, 0);
 
-                    const logoUrl = isUmingle ? 'https://i.ibb.co/xS4xFRrS/Frame.png' : 'https://i.ibb.co/KcvKXzxK/logo.png';
-                    const greytoolsLogoUrl = 'https://i.ibb.co/zTS0gP0G/logo-greytools.png';
+                    const logoUrl = isUmingle ? '' : '';
+                    const greytoolsLogoUrl = '';
 
                     let logosProcessed = 0;
                     const processLogos = () => {
@@ -4109,7 +4109,7 @@
                                 const fileName = `greytools_${entry.ip}_${randomId}.png`;
 
                                 link.download = fileName;
-                                link.setAttribute('data-author', "chilltool's");
+                                link.setAttribute('data-author', "GreyTools");
 
                                 document.body.appendChild(link);
                                 link.click();
