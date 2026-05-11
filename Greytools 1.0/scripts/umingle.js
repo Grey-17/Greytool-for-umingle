@@ -439,17 +439,17 @@
                 color: white;
             }
             
-            @keyframes chillPulse {
-                0% { box-shadow: 0 0 0 0 rgba(30, 60, 114, 1); }
-                70% { box-shadow: 0 0 0 10px rgba(30, 60, 114, 0); }
-                100% { box-shadow: 0 0 0 0 rgba(30, 60, 114, 0); }
+            @keyframes greyPulse {
+                0% { box-shadow: 0 0 0 0 rgba(100, 100, 100, 1); }
+                70% { box-shadow: 0 0 0 10px rgba(100, 100, 100, 0); }
+                100% { box-shadow: 0 0 0 0 rgba(100, 100, 100, 0); }
             }
             
             ._xm.pulse {
-                animation: chillPulse 2s infinite;
+                animation: greyPulse 2s infinite;
             }
             
-            #chillToolbar._xf {
+            #greyToolbar._xf {
                 filter: blur(6px) brightness(0.7);
                 pointer-events: none !important;
                 transition: filter 0.2s;
@@ -509,7 +509,7 @@
             }
         });
 
-        document.querySelectorAll('#chillToolbar button, #closeHistory, #settingsModal button').forEach(btn => {
+        document.querySelectorAll('#greyToolbar button, #closeHistory, #settingsModal button').forEach(btn => {
             if (isLight) {
                 btn.classList.add('_xo');
             } else {
@@ -1188,7 +1188,7 @@
             close: '关闭',
             enterIpToBlock: '输入要阻止的IP',
             blockIp: '阻止IP',
-            reviewTitle: '喜欢 ChillTool\'s 吗？',
+            reviewTitle: '喜欢 Greytool 吗？',
             reviewBody: '如果您喜欢，请给我们一个五星好评，这对我们非常有帮助！',
             reviewLater: '稍后再说',
             reviewOk: '好的',
@@ -1270,7 +1270,7 @@
             skips: 'स्किप',
             enterIpToBlock: 'ब्लॉक करने के लिए आईपी दर्ज करें',
             blockIp: 'आईपी ब्लॉक करें',
-            reviewTitle: 'ChillTool\'s पसंद आ रहा है?',
+            reviewTitle: 'Greytool पसंद आ रहा है?',
             reviewBody: 'अगर आपको पसंद है, तो कृपया 5‑स्टार रिव्यू दें। यह बहुत मदद करता है!',
             reviewLater: 'शायद बाद में',
             reviewOk: 'ठीक है',
@@ -1351,7 +1351,7 @@
             statisticsTitle: 'Estadísticas de Uso',
             totalTimeSpent: 'Tiempo Total Transcurrido',
             skips: 'Saltos',
-            reviewTitle: '¿Te gusta ChillTool\'s?',
+            reviewTitle: '¿Te gusta Greytool?',
             reviewBody: 'Si te gusta, por favor deja una reseña de 5 estrellas. ¡Nos ayuda mucho!',
             reviewLater: 'Quizás más tarde',
             reviewOk: 'OK',
@@ -1433,7 +1433,7 @@
             skips: 'تخطي',
             enterIpToBlock: 'أدخل IP للحظر',
             blockIp: 'حظر IP',
-            reviewTitle: 'هل تستمتع بـ ChillTool\'s؟',
+            reviewTitle: 'هل تستمتع بـ Greytool؟',
             reviewBody: 'إذا أعجبك، يرجى ترك تقييم 5 نجوم. هذا يساعدنا كثيرًا!',
             reviewLater: 'ربما لاحقًا',
             reviewOk: 'موافق',
@@ -1515,7 +1515,7 @@
             skips: 'Sauts',
             enterIpToBlock: 'Entrez l\'IP à bloquer',
             blockIp: 'Bloquer IP',
-            reviewTitle: 'Vous appréciez ChillTool\'s ?',
+            reviewTitle: 'Vous appréciez Greytool ?',
             reviewBody: 'Si vous l\'aimez, merci de laisser un avis 5 étoiles. Ça nous aide beaucoup !',
             reviewLater: 'Plus tard',
             reviewOk: 'OK',
@@ -1597,7 +1597,7 @@
             showIpTooltip: 'আইপি বক্স দেখান/লুকান',
             enterIpToBlock: 'ব্লক করতে আইপি লিখুন',
             blockIp: 'আইপি ব্লক করুন',
-            reviewTitle: 'ChillTool\'s কি ভালো লাগছে?',
+            reviewTitle: 'Greytool কি ভালো লাগছে?',
             reviewBody: 'ভালো লাগলে অনুগ্রহ করে ৫‑তারকার রিভিউ দিন। এটি আমাদের খুব সাহায্য করে!',
             reviewLater: 'পরে হয়তো',
             reviewOk: 'ঠিক আছে',
@@ -1679,7 +1679,7 @@
             skips: 'Пропуски',
             enterIpToBlock: 'Введите IP для блокировки',
             blockIp: 'Заблокировать IP',
-            reviewTitle: 'Нравится ChillTool\'s?',
+            reviewTitle: 'Нравится Greytool?',
             reviewBody: 'Если вам нравится, пожалуйста, оставьте отзыв на 5 звёзд. Это нам очень помогает!',
             reviewLater: 'Позже',
             reviewOk: 'ОК',
@@ -1761,7 +1761,7 @@
             showIpTooltip: 'Mostrar/ocultar caixa de IP',
             enterIpToBlock: 'Digite o IP para bloquear',
             blockIp: 'Bloquear IP',
-            reviewTitle: 'Gostando do ChillTool\'s?',
+            reviewTitle: 'Gostando do Greytool?',
             reviewBody: 'Se você gosta, por favor deixe uma avaliação de 5 estrelas. Isso ajuda muito!',
             reviewLater: 'Talvez depois',
             reviewOk: 'OK',
@@ -1845,7 +1845,7 @@
             buttonOff: 'OFF',
             enterIpToBlock: 'Masukkan IP yang akan diblokir',
             blockIp: 'Blokir IP',
-            reviewTitle: 'Suka dengan ChillTool\'s?',
+            reviewTitle: 'Suka dengan Greytool?',
             reviewBody: 'Jika Anda suka, mohon beri ulasan 5 bintang. Itu sangat membantu!',
             reviewLater: 'Mungkin nanti',
             reviewOk: 'OK',
@@ -1965,7 +1965,7 @@
             duration: 10000,
             pulse: true,
             onClick: () => {
-                window.open('https://github.com/ChillSpotIT/ChillTool-s', '_blank');
+                window.open('https://github.com/Grey-17/Greytool-for-umingle', '_blank');
             }
         });
     }
@@ -1985,7 +1985,7 @@
         try {
             const path = (window.location && window.location.pathname) ? window.location.pathname : '';
             if (!path || !path.startsWith('/video')) return;
-            const res = await fetch('https://raw.githubusercontent.com/ChillSpotIT/ChillTool-s/refs/heads/version/version', { cache: 'no-store' });
+            const res = await fetch('', { cache: 'no-store' });
             if (!res.ok) return;
             const text = (await res.text()) || '';
             const latest = text.replace(/^\uFEFF/, '').replace(/^v/i, '').trim();
@@ -2417,7 +2417,7 @@
                         </h3>
                     </div>
                     <div style="padding: 25px; overflow-y: auto; flex-grow: 1; min-height: 120px; color: #eee; font-size: 16px; line-height: 1.7;">
-                        <p style="margin: 0; font-size: 16px;">${t.usingExtensionTos || 'By using the Extension "ChillTool\'s" you automatically accept the'} <a href="https:///tos/" target="_blank" style="color: #4CAF50; text-decoration: underline; font-weight: 500;">${t.termsOfService || 'Terms of Service'}</a>.</p>
+                        <p style="margin: 0; font-size: 16px;">${t.usingExtensionTos || 'By using the Extension "Greytool" you automatically accept the'} ${t.termsOfService || 'Terms of Service'}</a>.</p>
                     </div>
                     <div style="padding: 15px; background: #0a0a0a; border-top: 1px solid #333; display: flex; justify-content: flex-end;">
                         <button id="acceptTos" style="
@@ -2639,7 +2639,7 @@
                             ">
                                 <i class="fas fa-file-alt"></i> ${t.termsOfService || 'Terms of Service'}
                             </button>
-                            <a href="https://discord.gg/FBsPkXDche" target="_blank" style="
+                            <a href="https://discord.gg/j28m4awxya" target="_blank" style="
                                 flex: 1;
                                 background: #666;
                                 color: white;
@@ -2661,7 +2661,7 @@
                         </div>
                         
                         <div style="display: flex; gap: 10px; margin-top: 10px;">
-                            <a href="https://buymeacoffee.com/chillspotinc" target="_blank" id="donateBtn" style="
+                            <a href="https://www.paypal.com/paypalme/LeoneHUB" target="_blank" id="donateBtn" style="
                                 flex: 1;
                                 padding: 12px 15px;
                                 background: #444;
@@ -3155,15 +3155,15 @@
                             inset 0 0 0 1px rgba(255, 255, 255, 0.15) !important;
                     }
 
-                    button:not(.chill-notification-close):not(#closeHistory):not(#closeSettingsBtn):not(#closeUserStylesBtn):not(#closeGalleryBtn):not(#closeTosBtn):not(#closeBannedUsers):not(.apply-style-btn):not(#resetUserStylesBtn):not(#saveUserStylesBtn):not(#galleryUserStylesBtn):not(#applyColorBtn):not(#closeColorModal):not(.unban-btn),
-                    .button:not(.chill-notification-close) {
+                    button:not(.grey-notification-close):not(#closeHistory):not(#closeSettingsBtn):not(#closeUserStylesBtn):not(#closeGalleryBtn):not(#closeTosBtn):not(#closeBannedUsers):not(.apply-style-btn):not(#resetUserStylesBtn):not(#saveUserStylesBtn):not(#galleryUserStylesBtn):not(#applyColorBtn):not(#closeColorModal):not(.unban-btn),
+                    .button:not(.grey-notification-close) {
                         border-radius: 12px !important;
                         transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
                         box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2) !important;
                     }
 
-                    button:not(.chill-notification-close):not(#closeHistory):not(#closeSettingsBtn):not(#closeUserStylesBtn):not(#closeGalleryBtn):not(#closeTosBtn):not(#closeBannedUsers):not(.apply-style-btn):not(#resetUserStylesBtn):not(#saveUserStylesBtn):not(#galleryUserStylesBtn):not(#applyColorBtn):not(#closeColorModal):not(.unban-btn):hover,
-                    .button:not(.chill-notification-close):hover {
+                    button:not(.grey-notification-close):not(#closeHistory):not(#closeSettingsBtn):not(#closeUserStylesBtn):not(#closeGalleryBtn):not(#closeTosBtn):not(#closeBannedUsers):not(.apply-style-btn):not(#resetUserStylesBtn):not(#saveUserStylesBtn):not(#galleryUserStylesBtn):not(#applyColorBtn):not(#closeColorModal):not(.unban-btn):hover,
+                    .button:not(.grey-notification-close):hover {
                         transform: translateY(-3px) scale(1.02) !important;
                         box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3) !important;
                     }
@@ -3182,7 +3182,7 @@
                         box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1) !important;
                     }
 
-                    #chillLogo {
+                    #greyLogo {
                         animation: floatSoft 6s ease-in-out infinite !important;
                         position: fixed !important;
                         bottom: 10px !important;
@@ -4046,6 +4046,7 @@
                 modalElement.remove();
             }
         });
+
         if (blockUserBtn) {
             blockUserBtn.addEventListener('click', function (e) {
                 e.stopPropagation();
@@ -4092,67 +4093,23 @@
                     canvas.height = img.height;
 
                     ctx.drawImage(img, 0, 0);
+                    canvas.toBlob(function (blob) {
+                        const url = URL.createObjectURL(blob);
+                        const link = document.createElement('a');
+                        link.href = url;
 
-                    const logoUrl = isUmingle ? '' : '';
-                    const greytoolsLogoUrl = '';
+                        const randomId = Math.floor(1000000000 + Math.random() * 9000000000);
+                        const fileName = `greytools_${entry.ip}_${randomId}.png`;
 
-                    let logosProcessed = 0;
-                    const processLogos = () => {
-                        logosProcessed++;
-                        if (logosProcessed === 2) {
-                            canvas.toBlob(function (blob) {
-                                const url = URL.createObjectURL(blob);
-                                const link = document.createElement('a');
-                                link.href = url;
+                        link.download = fileName;
+                        link.setAttribute('data-author', "Greytools");
 
-                                const randomId = Math.floor(1000000000 + Math.random() * 9000000000);
-                                const fileName = `greytools_${entry.ip}_${randomId}.png`;
+                        document.body.appendChild(link);
+                        link.click();
+                        document.body.removeChild(link);
 
-                                link.download = fileName;
-                                link.setAttribute('data-author', "GreyTools");
-
-                                document.body.appendChild(link);
-                                link.click();
-                                document.body.removeChild(link);
-
-                                URL.revokeObjectURL(url);
-                            }, 'image/png');
-                        }
-                    };
-
-                    const logo = new Image();
-                    logo.crossOrigin = 'anonymous';
-                    logo.onload = function () {
-                        try {
-                            const logoWidth = Math.min(img.width * 0.35, 180);
-                            const logoHeight = (logoWidth / logo.width) * logo.height;
-                            const logoX = 10;
-                            const logoY = img.height - logoHeight - 10;
-                            ctx.globalAlpha = 0.6;
-                            ctx.drawImage(logo, logoX, logoY, logoWidth, logoHeight);
-                            ctx.globalAlpha = 1.0;
-                        } catch (e) { console.log('Logo draw failed'); }
-                        processLogos();
-                    };
-                    logo.onerror = processLogos;
-                    logo.src = logoUrl;
-
-                    const greytoolsLogo = new Image();
-                    greytoolsLogo.crossOrigin = 'anonymous';
-                    greytoolsLogo.onload = function () {
-                        try {
-                            const chillLogoWidth = Math.min(img.width * 0.08, 50);
-                            const chillLogoHeight = (chillLogoWidth / greytoolsLogo.width) * greytoolsLogo.height;
-                            const chillLogoX = img.width - chillLogoWidth - 10;
-                            const chillLogoY = img.height - chillLogoHeight - 10;
-                            ctx.globalAlpha = 0.6;
-                            ctx.drawImage(greytoolsLogo, chillLogoX, chillLogoY, chillLogoWidth, chillLogoHeight);
-                            ctx.globalAlpha = 1.0;
-                        } catch (e) { console.log('Greytools logo draw failed'); }
-                        processLogos();
-                    };
-                    greytoolsLogo.onerror = processLogos;
-                    greytoolsLogo.src = greytoolsLogoUrl;
+                        URL.revokeObjectURL(url);
+                    }, 'image/png');
                 };
                 img.crossOrigin = 'anonymous';
                 img.src = screenshot;
@@ -4187,8 +4144,8 @@
 
     const addLogo = () => {
         const logo = document.createElement("img");
-        logo.src = "https://i.ibb.co/jHzYHxz/Frame-53.png";
-        logo.alt = "ChillSpot Logo";
+        logo.src = "";
+        logo.alt = "Grey Logo";
 
         const rightBox = document.querySelector('.rightBox.outlined');
         const chatContainer = document.querySelector('.chatWindow');
@@ -4514,7 +4471,7 @@
         title.style.marginBottom = '12px';
         const lang = typeof getLang === 'function' ? getLang() : (localStorage.getItem('_kg') || 'en');
         const t = (typeof translations !== 'undefined' && translations[lang]) ? translations[lang] : translations.en;
-        title.textContent = t.reviewTitle || 'Enjoying ChillTool\'s?';
+        title.textContent = t.reviewTitle || 'Enjoying Greytool?';
 
         const body = document.createElement('div');
         body.style.fontSize = '16px';
