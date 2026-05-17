@@ -1,5 +1,3 @@
-
-
 (function () {
     'use strict';
 
@@ -331,75 +329,6 @@
 
     setupSkipCounter();
 
-    // Bypass skip delay
-    const skipDelayObserver = new MutationObserver((mutations) => {
-        const upsellBox = document.getElementById('vipUpsellBox');
-        if (upsellBox) {
-            upsellBox.remove();
-        }
-        
-        const skipBtns = document.querySelectorAll('.skipButton, .bottomButton.skipButton, #newChatBtn, button');
-        skipBtns.forEach(btn => {
-            if (btn.textContent && (btn.textContent.includes('Skip') || btn.textContent.includes('Next') || btn.classList.contains('skipButton'))) {
-                if (btn.hasAttribute('disabled')) {
-                    btn.removeAttribute('disabled');
-                }
-                if (btn.classList.contains('disabled')) {
-                    btn.classList.remove('disabled');
-                }
-                btn.style.pointerEvents = 'auto';
-            }
-        });
-    });
-    
-    skipDelayObserver.observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ['disabled', 'class'] });
-
-    // --- STRUMENTO DIAGNOSTICO PER MISURARE IL RITARDO DEL SERVER ---
-    let diagnosticLastSkipTime = 0;
-    
-    document.addEventListener('click', (e) => {
-        let isSkip = false;
-        // Controlliamo in modo molto ampio se è stato cliccato un tasto Skip
-        if (e.target.closest('.skipButton, #newChatBtn, .bottomButton')) {
-            const btn = e.target.closest('.skipButton, #newChatBtn, .bottomButton');
-            if (btn.textContent.toLowerCase().includes('skip') || btn.textContent.toLowerCase().includes('next') || btn.classList.contains('skipButton') || btn.id === 'newChatBtn') {
-                isSkip = true;
-            }
-        }
-        
-        if (isSkip) {
-            diagnosticLastSkipTime = performance.now();
-            console.log("%c[Greytools Diagnostic] ⏱️ Skip cliccato! Misuratore partito...", "color: #00aaff; font-weight: bold; font-size: 16px; background: #222; padding: 4px; border-radius: 4px;");
-        }
-    }, true);
-
-    const diagnosticObserver = new MutationObserver((mutations) => {
-        if (diagnosticLastSkipTime === 0) return;
-        
-        for (const m of mutations) {
-            if (m.addedNodes.length > 0) {
-                for (const node of m.addedNodes) {
-                    // Controlliamo qualsiasi elemento testuale o div
-                    const text = node.textContent ? node.textContent.toLowerCase() : "";
-                    
-                    if (text.includes("stranger") || text.includes("sconosciuto") || text.includes("chatting with") || text.includes("connesso con") || text.includes("looking for") || node.nodeName === 'VIDEO' || (node.classList && node.classList.contains('video-container'))) {
-                        const delay = performance.now() - diagnosticLastSkipTime;
-                        // Registriamo solo se è passato più di mezzo secondo (per ignorare cambiamenti grafici immediati)
-                        if (delay > 500) { 
-                            console.log(`%c[Greytools Diagnostic] 🔴 CONNESSIONE STABILITA DAL SERVER!`, "color: #00ff00; font-weight: bold; font-size: 16px; background: #111; padding: 5px; border: 1px solid #00ff00;");
-                            console.log(`%c[Greytools Diagnostic] ⏱️ Tempo esatto di attesa (Hard Limit): ${(delay / 1000).toFixed(3)} secondi.`, "color: #ff3333; font-weight: bold; font-size: 18px; background: #222; padding: 5px; border: 1px solid #ff3333;");
-                            diagnosticLastSkipTime = 0;
-                            return; // Ferma il ciclo
-                        }
-                    }
-                }
-            }
-        }
-    });
-    
-    diagnosticObserver.observe(document.body, { childList: true, subtree: true, characterData: true });
-    // ----------------------------------------------------------------
-
     const isUhmegle = window.location.hostname === 'uhmegle.com' || window.location.hostname === 'www.uhmegle.com';
     const isUmingle = window.location.hostname === 'umingle.com' || window.location.hostname === 'www.umingle.com';
     const baseUrl = isUmingle ? 'https://umingle.com' : 'https://uhmegle.com';
@@ -546,11 +475,6 @@
                     1px -1px 0 #000,
                     -1px 1px 0 #000,
                     1px 1px 0 #000 !important;
-            }
-            #vipUpsellBox, .vip-upsell-box {
-                display: none !important;
-                opacity: 0 !important;
-                pointer-events: none !important;
             }
         `;
     document.head.appendChild(style);
@@ -4824,5 +4748,6 @@
         }
     });
 
-    // if you see this message, please donate to support the development of the extension, thx! (Open ticket on discord)
+    // if you see this message, please donate to support the development of the extension, thx! (Open ticket on discord or use funding.yml)
+    // to check if your usage falls under prohibited activities, please visit /legal
 })();
