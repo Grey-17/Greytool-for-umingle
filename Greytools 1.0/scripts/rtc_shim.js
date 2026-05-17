@@ -40,43 +40,6 @@
         Object.defineProperty(navigator, 'webdriver', { get: () => false, configurable: true });
     } catch (_) { }
 
-    try {
-        Object.defineProperty(window, 'isVip', { get: () => true, configurable: true });
-        Object.defineProperty(window, 'isPremium', { get: () => true, configurable: true });
-        Object.defineProperty(window, 'vip', { get: () => true, configurable: true });
-        Object.defineProperty(window, 'premium', { get: () => true, configurable: true });
-    } catch (_) { }
-
-    const _origJsonParse = JSON.parse;
-    JSON.parse = function() {
-        const res = Reflect.apply(_origJsonParse, this, arguments);
-        if (res !== null && typeof res === 'object') {
-            if ('isVip' in res) res.isVip = true;
-            if ('vip' in res) res.vip = true;
-            if ('premium' in res) res.premium = true;
-            if ('isPremium' in res) res.isPremium = true;
-            if ('plan' in res && res.plan === 'free') res.plan = 'premium';
-            if ('slowSkip' in res) res.slowSkip = false;
-        }
-        return res;
-    };
-    makeNative(JSON.parse, 'parse');
-
-    const _origSetTimeout = window.setTimeout;
-    window.setTimeout = function(handler, delay, ...args) {
-        if (typeof delay === 'number' && delay > 1000) {
-            const str = typeof handler === 'function' ? handler.toString() : String(handler);
-            if (str.includes('vipUpsellBox') || str.includes('skip') || str.includes('premium')) {
-                delay = 0;
-            } else if (delay === 3000 || delay === 4000 || delay === 5000) {
-                // Many of these clone sites use exactly 3s or 5s for the skip lock
-                delay = 0;
-            }
-        }
-        return Reflect.apply(_origSetTimeout, this, [handler, delay, ...args]);
-    };
-    makeNative(window.setTimeout, 'setTimeout');
-
     const _NativePeer = window.RTCPeerConnection || window.mozRTCPeerConnection;
     if (_NativePeer) {
         function _WrappedPeer() {
